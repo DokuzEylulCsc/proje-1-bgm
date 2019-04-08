@@ -8,39 +8,39 @@ namespace WindowsFormsApp1
 {
     public class Sozcuk
     {
-        private String kelime;
+        private String kelime; //gelen kelimeni tutulmasi icin
 
-        public Sozcuk(String kelime)
+        public Sozcuk(String kelime) //constructor olusturumak icin
         {
-            this.kelime = kelime;
-        }
-
-        public int getKelimeUzunlugu()
-        {
-            return kelime.Length;
-        }
-        public void goster()
-        {
-            Console.WriteLine(kelime);
+            this.kelime = kelime; //parametre olarak alınan kelimeyi class da ki kelimeye esitleme
         }
 
-        public string getKelime()
+        public int getKelimeUzunlugu()  //girilen kelimenin uzunluguna ulasmak icin
         {
-            return kelime;
+            return kelime.Length;   //hazir lenght fonsiyonu
+        }
+        public void goster()    //girilen kelimeyi gostermeye yarar
+        {
+            Console.WriteLine(kelime);  //console basıyor girilen kelimeyi
         }
 
-        public Boolean varMi(String str)
+        public string getKelime()   //girilen kelimeye erisme fonksiyonu
         {
-            return kelime.Contains(str);
+            return kelime;  //kelimeyi geri donduruyor
         }
-        public int karsilastir(String kelime)
+
+        public Boolean varMi(String str)    //girilen kelime ile eldeki kelimeleri karsilastirmak icin
+        {
+            return kelime.Contains(str);    //contains hazir fonksiyonu ile icindeki harfleri var mı bakiyor
+        }
+        public int karsilastir(String kelime)   //karsilastirma fonksiyonu
         {
             int ret = 0;
-            for (int i = 0; i < kelime.Length; i++)
+            for (int i = 0; i < kelime.Length; i++) //kelime uzunlugu kadar donuyor
             {           
-                if (this.kelime[i].Equals(kelime[i]))
+                if (this.kelime[i].Equals(kelime[i]))   //kelimenin int cast edilmis haline göre var mı yok mu bakıyor 
                 {
-                    ret += (int)Math.Pow(2, i);
+                    ret += (int)Math.Pow(2, i); //harf dogruysa 1 degilse 0 olur
                 }
             }
             return ret;
